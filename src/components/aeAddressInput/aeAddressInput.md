@@ -4,7 +4,7 @@
     template: `
       <div>
         <ae-address-input
-          placeholder="0x00000 0000000 0000000\n0000000 0000000 0000000"
+          placeholder="ak$aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
           v-model="address"
         />
         Address: {{address}}
