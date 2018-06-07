@@ -10,13 +10,9 @@
         <small class="truncated-address" v-if="collapsed">{{identity.address | shorten}}  ••••••</small>
       </span>
       <div class="balances">
-        <div v-if='tokenAmount' class="balance token">
-          <span class="amount">{{tokenAmount}}</span>
-          <span class="currency-symbol">AE</span>
-        </div>
-        <div class="balance">
+        <div class="balance token">
           <span class="amount">{{amount}}</span>
-          <span class="currency-symbol">ETH</span>
+          <span class="currency-symbol">AE</span>
         </div>
       </div>
     </div>
