@@ -45,9 +45,9 @@ full width block button
 </ae-button>
 ```
 
-inactive
+disabled
 ```vue
-<ae-button inactive>Inactive</ae-button>
+<ae-button disabled>Disabled</ae-button>
 ```
 
 ```vue
