@@ -22,7 +22,7 @@
 
   &.focus {
     border-left: 2px solid $color-focus;
-    caret-color: $color-focus;
+    caret-color: $color-error;
   }
   &.focus .ae-input-label {
     color: $color-focus;
