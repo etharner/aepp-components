@@ -29,14 +29,12 @@ export default {
      */
     fill: {
       type: String,
-      validator(value) {
-        return [
-          'neutral',
-          'default',
-          'alternative',
-          'emphasis',
-        ].indexOf(value) !== 1;
-      },
+      validator: value => [
+        'neutral',
+        'default',
+        'alternative',
+        'emphasis',
+      ].includes(value),
     },
 
     /**
@@ -45,13 +43,11 @@ export default {
      */
     align: {
       type: String,
-      validator(value) {
-        return [
-          'top',
-          'center',
-          'bottom',
-        ].indexOf(value) !== -1;
-      },
+      validator: value => [
+        'top',
+        'center',
+        'bottom',
+      ].includes(value),
     },
   },
 };

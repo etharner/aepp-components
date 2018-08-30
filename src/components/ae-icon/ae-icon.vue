@@ -21,14 +21,12 @@ export default {
      */
     fill: {
       type: String,
-      validator(value) {
-        return [
-          'neutral',
-          'default',
-          'alternative',
-          'emphasis',
-        ].indexOf(value) !== 1;
-      },
+      validator: value => [
+        'neutral',
+        'default',
+        'alternative',
+        'emphasis',
+      ].includes(value),
     },
 
     /**
@@ -38,9 +36,7 @@ export default {
      */
     face: {
       type: String,
-      validator(value) {
-        return ['round'].indexOf(value) !== 1;
-      },
+      validator: value => ['round'].includes(value),
     },
 
     /**

@@ -24,14 +24,12 @@ export default {
      */
     fill: {
       type: String,
-      validator(value) {
-        return [
-          'neutral',
-          'default',
-          'alternative',
-          'emphasis',
-        ].indexOf(value) !== 1;
-      },
+      validator: value => [
+        'neutral',
+        'default',
+        'alternative',
+        'emphasis',
+      ].includes(value),
     },
 
     /**
@@ -40,14 +38,12 @@ export default {
      */
     color: {
       type: String,
-      validator(value) {
-        return [
-          'neutral',
-          'default',
-          'alternative',
-          'emphasis',
-        ].indexOf(value) !== 1;
-      },
+      validator: value => [
+        'neutral',
+        'default',
+        'alternative',
+        'emphasis',
+      ].includes(value),
     },
 
     /**
@@ -57,14 +53,12 @@ export default {
      */
     face: {
       type: String,
-      validator(value) {
-        return [
-          'primary',
-          'secondary',
-          'icon',
-          'toolbar',
-        ].indexOf(value) !== 1;
-      },
+      validator: value => [
+        'primary',
+        'secondary',
+        'icon',
+        'toolbar',
+      ].includes(value),
     },
 
     /**
