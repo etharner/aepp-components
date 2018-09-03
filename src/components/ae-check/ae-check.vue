@@ -1,13 +1,7 @@
 <template>
-  <label
-    class="ae-check"
-    :class="{ [align]: Boolean(align), extend }"
-  >
+  <label class="ae-check">
     <input :type="type" :name="name" :value="value" :disabled="disabled">
-    <span class="ae-check-button">
-      <slot />
-    </span>
-    <slot class="ae-check-content" name="content"/>
+    <span class="ae-check-button" />
   </label>
 </template>
 <script>
@@ -36,24 +30,6 @@ export default {
       type: String,
       default: 'checkbox',
     },
-
-    /**
-     * Align the content slot:
-     * `left`
-     */
-    align: {
-      type: String,
-      validator(value) {
-        return [
-          'left',
-        ].indexOf(value) !== 1;
-      },
-    },
-
-    /**
-     * Extend the check component full width
-     */
-    extend: Boolean,
 
     /**
      * Puts the component in disabled state
@@ -141,23 +117,5 @@ export default {
       background-size: rem(12px);
       opacity: 0;
     }
-  }
-
-  .ae-check-content {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-
-  .ae-check.left > .ae-check-button {
-    order: 2;
-  }
-
-  .ae-check.left > .ae-check-content {
-    order: 1;
-  }
-
-  .ae-check.extend {
-    width: 100%;
   }
 </style>
