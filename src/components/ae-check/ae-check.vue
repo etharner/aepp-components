@@ -1,7 +1,10 @@
 <template>
   <label class="ae-check">
     <input :type="type" :name="name" :value="value" :disabled="disabled">
-    <span class="ae-check-button" />
+      :id="id"
+    <span class="indicator">
+      ✓
+    </span>
   </label>
 </template>
 <script>
@@ -42,80 +45,45 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-  @import '../../styles/globals';
+  @import '../../styles/variables/colors';
+  @import '../../styles/variables/animations';
+  @import '../../styles/variables/typography';
 
   .ae-check {
-    user-select: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-
-    > input[type="radio"],
-    > input[type="checkbox"] {
+    input {
       display: none;
-      visibility: hidden;
+
+      &:checked + .indicator {
+        background: $color-emphasis;
+        border-color: $color-emphasis;
+        color: $color-white;
+      }
+
+      &:disabled + .indicator {
+        cursor: not-allowed;
+        background: $color-neutral-positive-1;
+        border-color: $color-neutral-positive-2;
+      }
     }
 
-    > input[type="radio"]:checked + .ae-check-button:before,
-    > input[type="checkbox"]:checked + .ae-check-button:before {
-      background: $color-emphasis;
-      border-color: $color-emphasis;
-    }
-
-    > input[type="radio"]:checked + .ae-check-button:after,
-    > input[type="checkbox"]:checked + .ae-check-button:after {
-      opacity: 1;
-    }
-
-    > input[type="radio"]:disabled + .ae-check-button:before,
-    > input[type="checkbox"]:disabled + .ae-check-button:before {
-      background: $color-neutral-positive-1;
-      border-color: $color-neutral-positive-2;
-    }
-
-    > input[type="radio"]:disabled + .ae-check-button,
-    > input[type="checkbox"]:disabled + .ae-check-button {
-      cursor: not-allowed;
-    }
-  }
-
-  .ae-check-button {
-    @include size(24px);
-    @extend %face-sans-base;
-
-    position: relative;
-    display: inline-block;
-    padding-left: rem(32px);
-    min-width: rem(32px);
-    min-height: rem(24px);
-    transition: all $base-transition-time;
-
-    &:before, &:after {
-      position: absolute;
+    .indicator {
+      box-sizing: content-box;
+      width: rem(22px);
+      height: rem(22px);
       display: inline-block;
-      content: ' ';
-      top: 0;
-      bottom: 0;
-      left: 0;
-      transition: all $base-transition-time;
-    }
-
-    &:before {
-      @include size(24px);
-
+      cursor: pointer;
+      transition-duration: $base-transition-time;
+      transition-property: background-color, border-color, color;
       background: $color-white;
       border: 2px solid $color-neutral-positive-1;
       border-radius: 50%;
       box-shadow: 0 0 16px $color-shadow-alpha-15;
-    }
-
-    &:after {
-      @include size(24px);
-
-      background: url("./images/check.svg") no-repeat center;
-      background-size: rem(12px);
-      opacity: 0;
+      color: transparent;
+      font-family: $font-sans;
+      font-size: rem(16px);
+      font-weight: 700;
+      line-height: rem(22px);
+      text-align: center;
     }
   }
 </style>
