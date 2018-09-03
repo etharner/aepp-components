@@ -1,10 +1,9 @@
 <template>
   <label
-    :for="id"
     class="ae-check"
     :class="{ [fill]: Boolean(fill), [align]: Boolean(align), extend }"
   >
-    <input :id="id" :type="type" :name="name" :value="value" :disabled="disabled">
+    <input :type="type" :name="name" :value="value" :disabled="disabled">
     <span class="ae-check-button">
       <slot />
     </span>
